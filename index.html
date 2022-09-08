@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Test</title>
+</head>
+<body>
+    <div class="start-container visible">
+        <div class="start-screen">
+            <img class="brand-logo" src="./images/logo.svg" alt="logo">
+            <div class="start-screen__title">
+                <h1>
+                    В Москве строится более 100 новостроек, <span class="italic">но достойных</span> вашего внимания единицы
+                </h1>
+            </div>
+            <div class="start-screen__desc">
+                <p>
+                    Пройдите тест из 4 вопросов, и сервис соберёт каталог из подходящих проектов
+                </p>
+            </div>
+            <button id="start-screen__btn" class="start-screen__btn">Начать Тест</button>
+        </div>
+    </div>
+
+
+    <form class="form">
+        <img class="brand-logo" src="./images/logo.svg" alt="logo">
+
+        <div class="form__name-step">
+            <label class="form__name-step__label">
+                Давайте познакомимся. Как вас зовут?
+            </label>
+            <input placeholder="Ваше Имя" id="name-input" class="form__name-step__input" type="text" />
+            <div class="form__name-step__btn-box">
+                <button type="button" disabled class="form__name-step-forward-btn">Продолжить</button>
+                <button type="button" class="form__name-step-skip-btn">Пропустить</button>
+            </div>
+        </div>
+
+        <div class="form__budget-step step-hidden">
+            <div class="form__budget-step__title">
+                <h2>Начнём. Какой у вас предполагаемый бюджет?</h2>
+            </div>
+            <div class="form__budget-step__info">
+                <span>
+                    <input class="budget-input" hidden value="-15" id="-15" name="budget" type="radio">
+                    <label for="-15">
+                        до 15 млн рублей
+                    </label>
+                </span>
+                <span>
+                    <input hidden class="budget-input" id="15-30" value="15-30" name="budget" type="radio">
+                    <label for="15-30">
+                        15-30 млн рублей
+                    </label>
+                </span>
+                <span>
+                    <input hidden class="budget-input" value="30-50" id="30-50" name="budget" type="radio">
+                    <label for="30-50">
+                        30-50 млн рублей
+                    </label>
+                </span>
+                <span>
+                    <input hidden class="budget-input" value="50-70" id="50-70" name="budget" type="radio">
+                    <label for="50-70">
+                        50-70 млн рублей
+                    </label>
+                </span>
+                <span>
+                    <input hidden class="budget-input" value="70-100" id="70-100" name="budget" type="radio">
+                    <label for="70-100">
+                        70-100 млн рублей
+                    </label>
+                </span>
+                <span>
+                    <input value="100+" hidden class="budget-input" name="budget" id="100+" type="radio">
+                    <label for="100+">больше 100 млн рублей</label>
+                </span>
+            </div>
+            <div class="form__budget-step__skip-btn">
+                <a href="">Пропустить</a>
+            </div>
+        </div>
+
+        <div class="form__purpose-step step-hidden">
+            <div class="form__purpose-step__title">
+                <h2>Для какой цели вы покупаете недвижимость?</h2>
+            </div>
+            <div class="form__purpose-step__info">
+                    <input value="life" class="purpose-input" name="purpose" hidden id="life" type="radio">
+                    <label for="life">для жизни</label>
+
+                    <input value="invest" class="purpose-input" name="purpose" hidden id="invest" type="radio">
+                    <label for="invest">для инвестиций</label>
+            </div>
+        </div>
+
+        <div class="form__region-step step-hidden">
+            <div class="form__region-step__title">
+                <h2>Какие районы Москвы вам нравятся?</h2>
+            </div>
+            <div class="form__region-step__info">
+                <!-- info from scripts -->
+            </div>
+            <div class="form__region-step__btn-box">
+                <button type="button" disabled class="form__region-step-forward-btn">Продолжить</button>
+                <button type="button" class="form__region-step-skip-btn">Пропустить</button>
+            </div>
+        </div>
+
+        <div class="form__result-step step-hidden">
+            
+        </div>
+    </form>
+</body>
+<script src="main.js"></script>
+</html>

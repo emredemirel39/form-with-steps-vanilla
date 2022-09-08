@@ -1,0 +1,683 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    overflow-y: hidden;
+}
+
+/* animations */
+
+@keyframes hidden-to-down {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* 50%{
+        transform: translateY(6%);
+        opacity: 0.6;
+    } */
+
+    99% {
+        transform: translateY(12%);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        min-width: 0px;
+        min-height: 0px;
+        visibility: hidden;
+        display: none;
+    }
+}
+
+@keyframes visible-from-down {
+    0% {
+        min-width: 0px;
+        min-height: 0px;
+        visibility: hidden;
+        display: none;
+        transform: translateY(13%);
+        opacity: 0;
+        
+    }
+
+    1% {
+        transform: translateY(12%);
+        visibility: visible;
+        display: block;
+        min-width: auto;
+        min-height: auto;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes step-visible-animation {
+    0% {
+        min-width: 0px;
+        min-height: 0px;
+        visibility: hidden;
+        transform: translateY(73%);
+        opacity: 0;
+        display: none;
+
+    }
+
+    1% {
+        transform: translateY(72%);
+        opacity: 0.1;
+        visibility: visible;
+        min-width: auto;
+        min-height: auto;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+        visibility: visible;
+        min-width: auto;
+        min-height: auto;
+    }
+}
+
+@keyframes step-hidden-animation {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* 50%{
+        transform: translateY(6%);
+        opacity: 0.6;
+    } */
+
+    99% {
+        transform: translateY(72%);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        min-width: 0px;
+        min-height: 0px;
+        visibility: hidden;
+        display: none;
+    }
+}
+
+.visible {
+    animation: visible-from-down 2s;
+    animation-fill-mode: forwards;
+}
+
+.hidden {
+    animation: hidden-to-down 2s;
+    animation-fill-mode: forwards;
+}
+
+.step-visible{
+    animation: step-visible-animation 2s;
+    animation-fill-mode: forwards;
+}
+
+.step-hidden {
+    animation: step-hidden-animation 2s;
+    animation-fill-mode: forwards;
+}
+
+
+/* start screen */
+
+.start-container{
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/home-bg.png');
+    max-width: 1920px;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    visibility: visible;
+    opacity: 1;
+}
+
+.brand-logo{
+    width: 60px;
+    margin-top: 3rem;
+}
+
+.start-screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.start-screen__title{
+    margin-top: 3rem;
+    font-size: 22px;
+    max-width: 60rem;
+    text-align: center;
+}
+
+.italic{
+    font-family: "Nocturne Serif", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.start-screen__desc{
+    font-size: 1.5em;
+    width: 40rem;
+    font-weight: normal;
+    text-align: center;
+    text-align: center;
+    font-weight: 200;
+    font-style: normal;
+    margin-top: 2rem;
+}
+
+.start-screen__btn{
+    text-decoration: none;
+    color: #fff;
+    background-color: #609970;
+    border: 0.0625em solid #609970;
+    transition: all ease .3s;
+    border-radius: 5em;
+    padding: 1.1875em 2.8125em;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.2em;
+    margin-top: 3rem;
+}
+
+.start-screen__btn:hover{
+    background-color: #3c6046;
+}
+
+
+
+
+/* form */
+
+@keyframes form-visible-animation {
+    0% {
+        min-width: 0px;
+        min-height: 0px;
+        visibility: hidden;
+        transform: translateY(13%);
+        opacity: 0;
+
+    }
+
+    1% {
+        transform: translateY(12%);
+        opacity: 0.1;
+        visibility: visible;
+        min-width: auto;
+        min-height: auto;
+    }
+
+    100% {
+        transform: translateY(0%);
+        opacity: 1;
+        visibility: visible;
+        min-width: auto;
+        min-height: auto;
+    }
+}
+
+@keyframes form-hidden-animation {
+    0% {
+        transform: translateY(0%);
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* 50%{
+        transform: translateY(6%);
+        opacity: 0.6;
+    } */
+
+    99% {
+        transform: translateY(12%);
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    100% {
+        min-width: 0px;
+        min-height: 0px;
+        visibility: hidden;
+        display: none;
+    }
+}
+
+.form{
+    -webkit-animation-fill-mode: forwards;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.form-visible{
+
+    animation: form-visible-animation 2s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    
+}
+
+.form-hidden{
+    animation: form-hidden-animation 2s;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+}
+
+/* form name-step */
+
+.form__name-step{
+    margin-top: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form__name-step__label{
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.form__name-step__input{
+    font-size: 22px;
+    font-weight: 700;
+    margin: 12px 0;
+    text-align: center;
+    border: none;
+    outline: none;
+}
+
+.form__name-step__btn-box{
+    display: flex;
+    gap: 3rem;
+
+}
+
+.form__name-step__btn-box button{
+    transition: .3s;
+    border-radius: 5em;
+    padding: 1.1875em 2.8125em;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+}
+
+.form__name-step-forward-btn {
+    border: none;
+    background-color: #609970;
+    border: 0.0625em solid #609970;
+    color: white;
+}
+
+.form__name-step-forward-btn:hover {
+    background-color: #4b7757;
+}
+
+.form__name-step-forward-btn:disabled {
+    background-color: #ccc;
+    border-color: #ccc;
+    cursor: default;
+    color: white;
+}
+
+
+.form__name-step-skip-btn{
+    border: 1px solid #8adca1;
+    color: #609970;
+    background-color: transparent;
+}
+
+.form__name-step-skip-btn:hover {
+    border: 1px solid #609970;
+}
+
+
+/* greeting div */
+
+.hello-message{
+    position: absolute;
+    top: 40%;
+    text-align: center;
+}
+
+.hello-message__title{
+    font-size: 26px;
+}
+
+.hello-message__desc {
+    font-size: 22px;
+}
+
+/* budget step */
+
+.form__budget-step{
+    position: absolute;
+    top: 20%;
+}
+
+.form__budget-step__title{
+    font-size: 22px;
+    text-align: center;
+}
+
+.form__budget-step__info{
+    margin-top: 2rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-items: center;
+    align-items: center;
+}
+
+.form__budget-step__info span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3.125em;
+    text-align: center;
+    border: 1px solid #b3b3b3;
+    font-size: 1.875em;
+    font-weight: 400;
+    color: #838484;
+    transition: .3s;
+    padding: 1rem 2rem;
+}
+
+.form__budget-step__info span:hover {
+    border: 1px solid #609970;
+    color: #609970;
+}
+
+.form__budget-step__info span label{
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+
+}
+
+.form__budget-step__info span:nth-child(5) {
+    grid-column: span 2 / span 2;
+    width: 100%;
+    
+}
+
+.form__budget-step__info span:last-child {
+    grid-column: span 3 / span 3;
+    width: 100%;
+}
+
+.form__budget-step__skip-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.form__budget-step__skip-btn a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+/* purpose step */
+
+.form__purpose-step{
+    position: absolute;
+    top: 20%;
+}
+
+.form__purpose-step__title{
+    font-size: 22px;
+    text-align: center;
+}
+
+.form__purpose-step__info{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 3rem;
+}
+
+.form__purpose-step__info label{
+    border: 1px solid #609970;
+    color: #609970;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all .3s ease;
+    height: 27rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form__purpose-step__info label:nth-child(2){
+    width: 16rem;
+    border-radius: 95px;
+}
+
+.form__purpose-step__info label:nth-child(2):hover {
+    border-radius: 55px;
+    background-color:#eff5f1;
+    background-image: url('./images/for-life.png');
+    background-size: cover;
+}
+
+.form__purpose-step__info label:nth-child(4) {
+    width: 32rem;
+    border-radius: 75px;
+}
+
+.form__purpose-step__info label:nth-child(4):hover {
+    border-radius: 45px;
+    background-image: url('./images/diagram.png');
+    background-size: cover;
+    background-position: left;
+    animation: slideToLeft 75s;
+    -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes slideToLeft {
+    0% {
+        background-position: left;
+    }
+
+    50% {
+        background-position: right;
+    }
+
+    100%{
+        background-position: left;
+    }
+}
+
+.purpose-input{
+    width: 100%;
+    height: 100%;
+}
+
+/* region-step */
+
+.form__region-step{
+    position: absolute;
+    top: 8rem;
+    
+}
+
+.form__region-step__title{
+    font-size: 22px;
+    text-align: center;
+}
+
+.form__region-step__info{
+    display: grid;
+    grid-template-columns: repeat(5, minmax(8rem, 1fr));
+    grid-template-rows: repeat(3, minmax(8rem, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    height: fit-content !important;
+}
+
+.region-label{
+    /* width: 10rem;
+    height: 10rem; */
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    align-items: center;
+    border-radius: 2rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #9a7c60;
+    color: #9a7c60;
+    transition: all 1s ease;
+}
+
+.region-label span {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    transition: all 1s ease;
+    flex-wrap: wrap;
+}
+
+.region-label:hover{
+    background-color: #9a7c6071;
+    border: none;
+}
+
+.region-label_selected span {
+    opacity: 1;
+    width: fit-content;
+    height: fit-content;
+}
+
+#region-khamovniki{
+    grid-column: span 3 / span 3;
+    border-color: #609970 !important;
+    color: #609970 !important;
+}
+
+#region-khamovniki:hover{
+    background-color: #6099706a;
+}
+
+#region-ramenki{
+    grid-column: span 2 / span 2;
+    border-color: #609970 !important;
+    color: #609970 !important;
+}
+
+#region-ramenki:hover{
+    background-color: #6099706a;
+}
+
+#region-vdnh{
+    grid-column: span 2 / span 2;
+    border-color: #609970 !important;
+    color: #609970 !important;
+}
+
+#region-vdnh:hover{
+    background-color: #6099706a;
+}
+
+#region-moskva-city{
+    grid-row: span 2 / span 2;
+    border-color: #60799a !important;
+    color: #60799a !important;
+}
+
+#region-moskva-city:hover{
+    background-color: #60799a67;
+}
+
+#region-zamoskvoreche{
+    grid-row: span 2 / span 2;
+    grid-column: span 2 / span 2;
+}
+
+.form__region-step__btn-box {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.form__region-step__btn-box button {
+    transition: .3s;
+    border-radius: 5em;
+    padding: 1.1875em 2.8125em;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+}
+
+.form__region-step-forward-btn {
+    border: none;
+    background-color: #609970;
+    border: 0.0625em solid #609970;
+    color: white;
+}
+
+.form__region-step-forward-btn:hover {
+    background-color: #4b7757;
+}
+
+.form__region-step-forward-btn:disabled {
+    background-color: #ccc;
+    border-color: #ccc;
+    cursor: default;
+    color: white;
+}
+
+
+.form__region-step-skip-btn {
+    border: 1px solid #8adca1;
+    color: #609970;
+    background-color: transparent;
+}
+
+.form__region-step-skip-btn:hover {
+    border: 1px solid #609970;
+}
+
+
+/* form resutl */
